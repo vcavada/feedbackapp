@@ -6,11 +6,11 @@ function RatingSelect({ select }) {
     // NOTE: We don't need local state here as it's a duplicate of parent state
     // also no real need for useEffect or context
     const [selected,setSelected] = useState(10)
-    const { FeedbackEdit } = useContext(FeedbackContext)
+    const { feedbackEdit } = useContext(FeedbackContext)
     
     useEffect(() => {
-       select(FeedbackEdit.item.rating)
-    }, [FeedbackEdit])
+       select(feedbackEdit.item.rating)
+    }, [feedbackEdit])
 
     const handleChange = (e) => {
     console.log(+e.currentTarget.value)
